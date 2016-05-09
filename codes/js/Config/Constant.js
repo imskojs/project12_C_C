@@ -14,7 +14,7 @@
     .constant("GOOGLE_OAUTH_CLIENT_ID", "12345678901-abcde2gh3j4lmn5p6rs7uvw8x90y1234.apps.googleusercontent.com")
     // Used for sending push notification
     // AIzaSyBiIcgsL-Qbn6MGqPisyir5t5Y4pYK2X_0
-    .constant("GOOGLE_PROJECT_NUMBER", "12345678901")
+    .constant("GOOGLE_PROJECT_NUMBER", "75718078375")
     // Development mode
     .constant("DEV_MODE", true)
     // Server
