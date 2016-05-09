@@ -18,9 +18,9 @@
     // Development mode
     .constant("DEV_MODE", true)
     // Server
-    .constant("SERVER_URL", "YOUR_SERVER_URL")
+    .constant("SERVER_URL", "http://192.168.0.65:1337")
     .constant("OAUTH_CALLBACK_URL", "http://localhost/callback")
-    .constant("APP_NAME", "YOUR_APP_NAME")
-    .constant("APP_NAME_KOREAN", "사람들이 볼만한 앱 이름")
-    .constant("APP_ID", 9999999999);
+    .constant("APP_NAME", "colorgory")
+    .constant("APP_NAME_KOREAN", "칼라고리")
+    .constant("APP_ID", 19);
 })(angular);
