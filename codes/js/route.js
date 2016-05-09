@@ -13,7 +13,12 @@
       .state('Main', {
         url: '/Main',
         templateUrl: 'state/0Main/Main.html',
-        controller: 'MainController as Main'
+        controller: 'MainController as vm'
+      })
+      .state('Walkthrough', {
+        url: '/Walkthrough',
+        templateUrl: 'state/Walkthrough/Walkthrough.html',
+        controller: 'WalkthroughController as vm'
       })
 
 

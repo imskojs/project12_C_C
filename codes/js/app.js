@@ -55,9 +55,9 @@
     //  Helper
     //====================================================
     function setInitialState() {
-      if ($rootScope.AppStorage.isFirstTime && $state.get('WalkThrough')) {
+      if ($rootScope.AppStorage.isFirstTime && $state.get('Walkthrough')) {
         // First time user logic
-        $state.go('WalkThrough');
+        $state.go('Walkthrough');
       } else if (!$rootScope.AppStorage.token) {
         // Not logged in user logic
         // $state.go('Main.Home');
