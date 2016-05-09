@@ -38,17 +38,19 @@ module modelling {
     questions: Array<Question>
   }
 
-  interface OptionObject {
-    photo: Photo;
-    content: string;
-  }
-  
   class Question {
     title: string;
-    options: Array<OptionObject>
+    options: Array<Option>
     survey: Survey;
   }
 
+  class Option {
+    index: number;
+    photo: Photo;
+    content: string;
+    question: Question;
+    survey: Survey;
+  }
 
   class Group {
     // Step 1
