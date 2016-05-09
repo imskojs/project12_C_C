@@ -4,6 +4,7 @@ module modelling {
     url: string;
     id: string;
     owner: string;
+    index: number;
   }
 
   class User {
@@ -18,9 +19,19 @@ module modelling {
     maritalStatus: string; // enum
     // required 4 to 10
     interests: Array<string>; // array of enums
+
+    // Many to Many
+    groups: Array<Group>; // group a user is a member of
+    // Many to Many
+    surveys: Array<Survey>; // survey a user has attended
+
+    // For faster query 참여한 설문, 참여한 그룹, 데일리이슈 참여여부
+    groupIds: Array<string>;
+    surveyIds: Array<string>;
   }
 
   class Survey {
+    type: string; // 일반, LBS, 그룹
     // Step 1
     category: string;
     title: string;
@@ -28,28 +39,41 @@ module modelling {
     photos: Array<Photo>
     // Step 2
     targetRecruitment: number;
-    surveyDuration: any; /*TODO*/
+    startDate: Date;
+    endDate: Date;
     displayTo: string; // '공개', '참여자만', '비공개'
     targetGender: string; // 전체 남자 여자
     targetAge: string; // 전체, 10대, 20대, 30대, 40대, 50대, 60대, 60대 이상
     targetOccupation: string; // 전체, 초등학생, 중.고등학생, 대학생, 직장인, 자영업, 공무원, 사업가, 주부
     targetLocation: string; // 전국, 서울 경기 인천 강원 부산 경남 대구 경북 대전 충남 광주 전남 울산 전북 제주 해외
     // Step 3
-    questions: Array<Question>
+    questions: Array<Question>;
+    // for LSB only
+    geoJSON: {};
+
+    // Created when answer is created.
+    answerCount: number;
+    answers: Array<Answer>;
+    // Many to Many
+    users: Array<User> // array of users attended survey.
+  }
+
+  class Answer {
+    index: number;
+    survey: Survey;
+    question: Question;
+    answerValue: string;
+    owner: User;
   }
 
   class Question {
-    title: string;
-    options: Array<Option>
-    survey: Survey;
-  }
-
-  class Option {
     index: number;
-    photo: Photo;
-    content: string;
-    question: Question;
+    title: string;
+    optionContents: Array<string>
+    optionAnswerValue: Array<string>;
     survey: Survey;
+    optionPhotos: Array<Photo>;
+    answers: Array<Answer>;
   }
 
   class Group {
@@ -73,7 +97,8 @@ module modelling {
     // Not set at creation
     commentCount: number;
     comments: Array<Comment>;
-    members: Array<User>;
+    // Many to Many 
+    users: Array<User>; // array of users that are a memeber of this group
     surveys: Array<Survey>;
   }
 
@@ -82,6 +107,11 @@ module modelling {
     owner: User;
     content: string;
     createdAt: string;
+  }
+
+  class Post {
+    category: string; //공지사항, 설문, 그룹, 데일리이슈
+    title: string;
   }
 
 }
