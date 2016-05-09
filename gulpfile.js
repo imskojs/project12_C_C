@@ -143,11 +143,11 @@ gulp.task('sassCommon', function(done) {
 
 gulp.task('js', function(done) {
   gulp.src(paths.js)
-    .pipe(cached('013_clientJooDang'))
+    .pipe(cached('019_clientColorgory'))
     .pipe(babel({
       presets: ['es2015']
     }))
-    .pipe(remember('013_clientJooDang'))
+    .pipe(remember('019_clientColorgory'))
     .pipe(concat('app.all.js'))
     .pipe(gulpif(argv.production, stripDebug()))
     .pipe(gulp.dest('./www/js/'))
