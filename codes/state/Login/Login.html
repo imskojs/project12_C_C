@@ -1,6 +1,39 @@
 <ion-view id="login">
-  <ion-content class="bg-image"
+  <ion-content class="content--bg-image"
     scroll="false"
   >
+    <div class="row flex">
+      <img src="" alt="Colorgory">
+    </div>
+
+    <h1 class="heading">궁금한 세상 모든 일을\n칼라고리로 알아보세요</h1>
+    <p class="para">사람들의 생각이 궁금하시면 이제 칼라고리를\n통해서 무료로 쉽고 빠르게 알아보세요.</p>
+
+    <button class="button row row-no-padding flex-v button--facebook"
+      ng-click="vm.login('facebook')"
+    >
+      <img class="button--facebook__icon"
+        src="img/nav_ic_01.png"
+      >
+      <p class="button--facebook__para">
+        Facebook으로 로그인
+      </p>
+    </button>
+
+    <button class="button button--signup"
+      ng-click="vm.signup()"
+    >
+      회원가입
+    </button>
+
+    <p class="terms">
+      서비스 약관 및 개인정보 보호 정책
+    </p>
+
+    <p class="login">
+      계정이 있으신가요? <span>로그인</span>
+    </p>
+
+
   </ion-content>
 </ion-view>

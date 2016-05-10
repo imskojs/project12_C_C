@@ -1,7 +1,65 @@
 #login {
-    .bg-image {
+    .content--bg-image {
         background-position: center center;
         background-size: cover;
         background-image: url(../img/login_bg.png);
+    }
+    .heading {
+        white-space: pre-line;
+        text-align: center;
+        font-size: 21pt;
+        color: white;
+    }
+    .para {
+        color: $grey;
+        font-size: 11pt;
+        text-align: center;
+        white-space: pre-line;
+        letter-spacing: -0.5px;
+    }
+    .button--facebook {
+        margin: 15vh auto 0;
+        height: 44px;
+        width: 80%;
+        background-color: #4065a3;
+        .button--facebook__icon {
+            height: 100%;
+            width: 20%;
+            border-right: 1px solid white;
+        }
+        .button--facebook__para {
+            width: 100%;
+            font-size: 13pt;
+            font-weight: 600;
+            margin-bottom: 0;
+            color: white;
+            text-align: center;
+        }
+    }
+    .button--signup {
+        background-color: $assertive;
+        display: block;
+        height: 44px;
+        width: 80%;
+        margin: 10px auto 0;
+        font-size: 13pt;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+    }
+    .terms {
+        color: $grey;
+        font-size: 10pt;
+        text-align: center;
+        margin-top: 5vh;
+    }
+    .login {
+        color: white;
+        font-size: 12pt;
+        margin-top: 5vh;
+        text-align: center;
+        span {
+            font-weight: 600;
+        }
     }
 }
