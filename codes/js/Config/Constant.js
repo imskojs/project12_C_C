@@ -6,7 +6,7 @@
     // Social login with Kakao
     .constant("KAKAO_KEY", "abcdefghijklmnopqrstu0123456789")
     // Social login with Facebook
-    .constant("FACEBOOK_KEY", "1234567890123456")
+    .constant("FACEBOOK_KEY", "1393857473973485")
     // Social login with twitter
     .constant("TWITTER_CONSUMER_KEY", "abCde1GHiJklmn2PqRSTuVWXY")
     .constant("TWITTER_CONSUMER_SECRET", "a1CDefGhIjK2MNopQRst3VwXY4zabC5Ef6HIJK6MNOpQrsTUVw")

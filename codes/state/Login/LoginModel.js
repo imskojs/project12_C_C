@@ -9,7 +9,10 @@
   function LoginModel() {
 
     var Model = {
-
+      user: {
+        identifier: '',
+        password: ''
+      }
     };
 
     return Model;
