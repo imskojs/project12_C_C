@@ -20,6 +20,11 @@
         templateUrl: 'state/Walkthrough/Walkthrough.html',
         controller: 'WalkthroughController as vm'
       })
+      .state('Login', {
+        url: '/Login',
+        templateUrl: 'state/Login/Login.html',
+        controller: 'LoginController as vm'
+      })
 
 
 

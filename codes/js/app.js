@@ -30,10 +30,6 @@
     angular.extend($rootScope, RootScope);
     if (DEV_MODE) {
       setInitialState();
-      // Mock User
-      $rootScope.AppStorage.user = {
-        id: "5693110464765c4714f10dd9"
-      };
     }
 
     $ionicPlatform.ready(onIonicPlatformReady);
@@ -56,11 +52,9 @@
     //====================================================
     function setInitialState() {
       if ($rootScope.AppStorage.isFirstTime && $state.get('Walkthrough')) {
-        // First time user logic
         $state.go('Walkthrough');
       } else if (!$rootScope.AppStorage.token) {
-        // Not logged in user logic
-        // $state.go('Main.Home');
+        $state.go('Login');
       } else {
         // Normal user logic
         // $state.go('Main.Home');

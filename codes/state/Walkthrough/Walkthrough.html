@@ -33,7 +33,9 @@
         </div>
       </ion-slide>
 
-      <ion-slide id="thirdImg" class="full">
+      <ion-slide id="thirdImg" class="full"
+        on-drag-left="vm.next('login')"
+      >
         <img class="logo"src="img/03_logo.png">
         <h1 class="heading">우리 동네 사람들에게</h3>
         <p class="para">'지금여기'서비스로 같은 지역내에 있는\n이용자들과 실시간으로\n설문을 나누어 보세요</p>

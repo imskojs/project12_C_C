@@ -5,12 +5,12 @@
 
   WalkthroughController.$inject = [
     '$ionicSlideBoxDelegate', '$ionicViewSwitcher', '$state',
-    'WalkthroughModel'
+    'WalkthroughModel', 'AppStorage'
   ];
 
   function WalkthroughController(
     $ionicSlideBoxDelegate, $ionicViewSwitcher, $state,
-    WalkthroughModel
+    WalkthroughModel, AppStorage
   ) {
     var vm = this;
     vm.Model = WalkthroughModel;
@@ -22,6 +22,7 @@
     //====================================================
     function next(login) {
       if (login) {
+        AppStorage.isFirstTime = false;
         $ionicViewSwitcher.nextDirection('forward');
         return $state.go('Login');
       }
