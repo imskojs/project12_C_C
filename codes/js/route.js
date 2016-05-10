@@ -11,9 +11,10 @@
 
     $stateProvider
       .state('Main', {
+        abstract: true,
         url: '/Main',
         templateUrl: 'state/0Main/Main.html',
-        controller: 'MainController as vm'
+        controller: 'MainController as vm',
       })
       .state('Walkthrough', {
         url: '/Walkthrough',
@@ -24,6 +25,11 @@
         url: '/Login',
         templateUrl: 'state/Login/Login.html',
         controller: 'LoginController as vm'
+      })
+      .state('Signup', {
+        url: '/Signup',
+        templateUrl: 'state/Signup/Signup.html',
+        controller: 'SignupController as vm'
       })
 
 

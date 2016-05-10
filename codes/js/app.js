@@ -54,7 +54,7 @@
       if ($rootScope.AppStorage.isFirstTime && $state.get('Walkthrough')) {
         $state.go('Walkthrough');
       } else if (!$rootScope.AppStorage.token) {
-        $state.go('Login');
+        $state.go('Signup');
       } else {
         // Normal user logic
         // $state.go('Main.Home');
