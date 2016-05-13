@@ -4,13 +4,15 @@
     .controller('SignupController', SignupController);
 
   SignupController.$inject = [
-    '$ionicPopup',
-    'SignupModel', 'Users'
+    '$ionicPopup', '$state',
+    'SignupModel', 'Users',
+    'DEV_MODE'
   ];
 
   function SignupController(
-    $ionicPopup,
-    SignupModel, Users
+    $ionicPopup, $state,
+    SignupModel, Users,
+    DEV_MODE
   ) {
     //====================================================
     //  Constructor
@@ -60,6 +62,10 @@
 
     function signup() {
 
+      if (DEV_MODE) {
+        console.log("'test' :::\n", 'test');
+        return $state.go('Login');
+      }
       if (!vm.Model.validated()) {
         return false;
       }

@@ -1,4 +1,8 @@
 //====================================================
+//  AppSpecific Colors
+//====================================================
+$ion-content-bg-color: #ececec !default;
+//====================================================
 //  Variables
 //====================================================
 $lighter: #d8edfe !default;
@@ -17,8 +21,8 @@ $black: #283030 !default;
 $lighter-grey: #f0f0f0 !default;
 $light-grey: #f0f0f0 !default;
 $grey: #ababab !default;
-$dark-grey: #666 !default;
-$darker-grey: #666 !default;
+$dark-grey: #9e9e9e !default;
+$darker-grey: #404040 !default;
 $red: red !default;
 $green: green !default;
 $blue: blue !default;
@@ -197,6 +201,8 @@ $app-colors: 'lighter',
     }
 }
 
+#category-list {}
+
 #login {
     .content--bg-image {
         background-position: center center;
@@ -263,6 +269,35 @@ $app-colors: 'lighter',
     }
 }
 
+#login-modal {
+    .login-modal__text {
+        color: $dark-grey;
+        text-align: center;
+        font-size: 12pt;
+        font-weight: bold;
+        white-space: pre-line;
+    }
+    .login-modal__text--header {
+        font-size: 16pt;
+        font-weight: 800;
+        letter-spacing: -1px;
+        text-align: center;
+        color: $darker-grey;
+    }
+    .login-modal__row--password {
+        margin-top: 40px;
+    }
+    .login-modal__text--password {
+        text-align: center;
+        margin-top: 20px;
+        color: $grey;
+        & > span {
+            color: $dark-grey;
+            font-weight: 800;
+        }
+    }
+}
+
 #signup {
     .button--photo {
         border: 2px solid #d5d6d7;
@@ -288,6 +323,7 @@ $app-colors: 'lighter',
         margin-left: 8px;
     }
 }
+
 
 #walkthrough {
     //====================================================

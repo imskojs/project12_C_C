@@ -4,23 +4,29 @@
     .controller('LoginController', LoginController);
 
   LoginController.$inject = [
-    '$ionicViewSwitcher', '$state', '$ionicPopup', '$ionicLoading',
+    '$ionicViewSwitcher', '$state', '$ionicPopup', '$ionicLoading', '$scope',
+    '$ionicModal',
     'LoginModel', 'Oauth', 'Users', 'AppStorage',
-    'FACEBOOK_KEY'
+    'FACEBOOK_KEY', 'DEV_MODE'
   ];
 
   function LoginController(
-    $ionicViewSwitcher, $state, $ionicPopup, $ionicLoading,
+    $ionicViewSwitcher, $state, $ionicPopup, $ionicLoading, $scope,
+    $ionicModal,
     LoginModel, Oauth, Users, AppStorage,
-    FACEBOOK_KEY
+    FACEBOOK_KEY, DEV_MODE
   ) {
     var vm = this;
     vm.Model = LoginModel;
 
     vm.login = login;
-    vm.showModal = showModal;
+    vm.goToSignUp = goToSignUp;
+    vm.findPassword = findPassword;
+
+    $scope.$on('$ionicView.afterEnter', onAfterEnter);
+    $scope.$on('$destroy', onDestroy);
     //====================================================
-    //  VM
+    //  Public
     //====================================================
     function login(provider) {
       if (provider === 'facebook') {
@@ -32,9 +38,16 @@
       }
     }
 
-    function showModal(type) {
-
+    function findPassword() {
+      console.log('find password');
     }
+
+    function goToSignUp() {
+      $ionicViewSwitcher.nextDirection('forward');
+      return $state.go('Signup');
+    }
+
+
 
     //====================================================
     //  Private
@@ -80,6 +93,31 @@
       AppStorage.token = userWrapper.token;
       AppStorage.isFirstTime = false;
     }
+
+    //====================================================
+    //  Event Handlers
+    //====================================================
+
+    function onAfterEnter() {
+      if (!vm.LoginModal) {
+        return $ionicModal.fromTemplateUrl('state/Login/_LoginModal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+          })
+          .then((modal) => {
+            vm.LoginModal = modal;
+          });
+      }
+    }
+
+    function onDestroy() {
+      if (vm.LoginModal) {
+        vm.LoginModal.destroy();
+        delete vm.LoginModal;
+      }
+    }
+
+
 
 
   }

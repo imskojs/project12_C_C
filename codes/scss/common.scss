@@ -22,7 +22,7 @@ img {
 ion-content {
     padding-top: 1px;
     & > .scroll {
-        background-color: #ececec;
+        background-color: $ion-content-bg-color;
         padding-top: 1px;
     }
 }
@@ -101,6 +101,7 @@ ion-content {
 }
 
 .col--underline {
+    padding-bottom: 2px;
     border-bottom: 1px solid #d5d6d7;
 }
 
@@ -136,6 +137,7 @@ ion-content {
     text-align: center;
     border-radius: 4px;
     margin-top: 12px;
+    @extend .flex;
     @include m(s) {
         height: 38px;
         font-size: 12pt;
@@ -197,6 +199,22 @@ input[type] {
             font-size: 12pt
         }
     }
+}
+
+.text--header {
+    font-size: 16pt;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-align: center;
+    color: $darker-grey;
+}
+
+.text--para {
+    color: $dark-grey;
+    text-align: center;
+    font-size: 12pt;
+    font-weight: bold;
+    white-space: pre-line;
 }
 
 .small {

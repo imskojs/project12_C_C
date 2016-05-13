@@ -1,0 +1,43 @@
+<ion-modal-view id="login-modal">
+  <ko-header title="로그인"
+    on-back="vm.LoginModal.hide()"
+  ></ko-header>
+  <ion-content class="has-header">
+    <section class="card--big">
+      <h1 class="login-modal__text--header">환영합니다!</h1>
+      <p class="login-modal__text"> 칼라고리에 오신 것을 환영합니다.
+        가입하신 이메일로 로그인 하세요.
+      </p>
+      <div class="row--big">
+        <div class="col--underline">
+          <input type="email"
+            placeholder="이메일 입력" 
+            ng-model="vm.Model.user.identifier"
+          >
+        </div>
+      </div>
+      <div class="row--big login-modal__row--password">
+        <div class="col--underline">
+          <input type="password"
+            placeholder="비밀번호 입력"
+            ng-model="vm.Model.user.password"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="card--big">
+      <div class="button--big"
+        ng-click="vm.login('local')"
+      >
+        로그인
+      </div>
+
+      <p class="login-modal__text--password"
+        ng-click="vm.findPassword()"
+      >
+        비밀번호를 잊으셨습니까? <span>비밀번호 찾기</span>
+      </p>
+    </section>
+  </ion-content>
+</ion-modal-view>

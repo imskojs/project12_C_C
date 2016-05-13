@@ -31,13 +31,11 @@
         templateUrl: 'state/Signup/Signup.html',
         controller: 'SignupController as vm'
       })
-
-
-
-
-
-
-
+      .state('SurveyList', {
+        url: '/SurveyList',
+        templateUrl: 'state/SurveyList/SurveyList.html',
+        controller: 'SurveyListController as vm'
+      });
 
   } //route end
 })(angular);
