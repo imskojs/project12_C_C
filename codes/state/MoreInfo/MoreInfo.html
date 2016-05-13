@@ -1,0 +1,162 @@
+<ion-view id="more-info">
+  <ko-header title="추가정보 입력"></ko-header>
+  <ion-content class="has-header">
+    <section class="card--big">
+      <h1 class="text--header">
+        감사합니다!
+      </h1>
+      <p class="text--para"> 보다 나은 서비스와 맞춤형 설문 제공을 위해
+        추가 정보를 필수로 받고 있습니다
+      </p>
+    </section>
+
+    <section class="more-info__card--big">
+
+      <div class="row row-no-padding more-info__row--big">
+        <div class=" flex more-info__col--label">
+          성별
+        </div>
+
+        <div class="more-info__col--content flex">
+          <div class="col flex more-info__col--content__col--left"
+            ng-class="{selected: vm.Model.user.gender === 'male'}"
+            ng-click="vm.Model.user.gender = 'male'"
+
+          >
+            남성
+          </div>
+          <div class="col flex more-info__col--content__col--right"
+            ng-class="{selected: vm.Model.user.gender === 'female'}"
+            ng-click="vm.Model.user.gender = 'female'"
+          >
+            여성
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row row-no-padding more-info__row--big">
+
+        <div class=" flex more-info__col--label">
+          연령
+        </div>
+
+        <div class="more-info__col--content flex"
+            ng-click="vm.AgePopover.show()"
+        >
+          <div class="col more-info__col--content__col--para"
+            ng-class="{'value-selected': vm.Model.user.age}"
+          >
+            {{vm.Model.user.age || '30대'}}
+          </div>
+          <div class="col-auto flex more-info__col--content__col--dropdown"
+          >
+              <img src="img/ic_drop_arrow.png">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row row-no-padding more-info__row--big">
+
+        <div class=" flex more-info__col--label">
+        직업
+        </div>
+
+        <div class="more-info__col--content flex"
+            ng-click="vm.OccupationPopover.show()"
+        >
+          <div class="col more-info__col--content__col--para"
+            ng-class="{'value-selected': vm.Model.user.occupation}"
+          >
+            {{vm.Model.user.occupation || '대학원생'}}
+          </div>
+          <div class="col-auto flex more-info__col--content__col--dropdown"
+          >
+              <img src="img/ic_drop_arrow.png">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row row-no-padding more-info__row--big">
+
+        <div class=" flex more-info__col--label">
+          지역
+        </div>
+
+        <div class="more-info__col--content flex"
+            ng-click="vm.LocationPopover.show()"
+        >
+          <div class="col more-info__col--content__col--para"
+            ng-class="{'value-selected': vm.Model.user.location}"
+          >
+            {{vm.Model.user.location || '경기도'}}
+          </div>
+          <div class="col-auto flex more-info__col--content__col--dropdown"
+          >
+              <img src="img/ic_drop_arrow.png">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row row-no-padding more-info__row--big">
+
+        <div class=" flex more-info__col--label">
+          학력
+        </div>
+
+        <div class="more-info__col--content flex"
+            ng-click="vm.EducationPopover.show()"
+        >
+          <div class="col more-info__col--content__col--para"
+            ng-class="{'value-selected': vm.Model.user.education}"
+          >
+            {{vm.Model.user.education || '대졸'}}
+          </div>
+          <div class="col-auto flex more-info__col--content__col--dropdown"
+          >
+              <img src="img/ic_drop_arrow.png">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row row-no-padding more-info__row--big">
+        <div class=" flex more-info__col--label">
+          성별
+        </div>
+
+        <div class="more-info__col--content flex">
+          <div class="col flex more-info__col--content__col--left"
+            ng-class="{selected: vm.Model.user.maritalStatus === 'single'}"
+            ng-click="vm.Model.user.maritalStatus = 'single'"
+
+          >
+            미혼
+          </div>
+          <div class="col flex more-info__col--content__col--right"
+            ng-class="{selected: vm.Model.user.maritalStatus === 'married'}"
+            ng-click="vm.Model.user.maritalStatus = 'married'"
+          >
+            기혼
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card--big">
+      <p class="small" style="margin-bottom: 2px;">입력하신 추가 정보는 칼라고리 서비스 이용에만 사용됩니다.</p>
+      <div class="button--big" style="margin-top: 1px;"
+        ng-click="vm.update()"
+      >
+          저장하기
+      </div>
+    </section>
+
+
+  </ion-content>
+</ion-view>

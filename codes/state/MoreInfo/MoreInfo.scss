@@ -1,0 +1,84 @@
+#more-info {
+    .more-info__card--big {
+        @extend .card--big;
+        padding: 0;
+    }
+    .more-info__row--big {
+        width: 100%;
+        @include m(s) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        @include m(m) {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        &.row+.row {
+            margin-top: 0px;
+        }
+        &:not(:last-of-type) {
+            border-bottom: 1px solid $light-grey;
+        }
+    }
+    .more-info__col--label {
+        @include m(s) {
+            font-size: 10pt;
+        }
+        @include m(m) {
+            font-size: 12pt;
+        }
+        margin-left: 15px;
+        font-weight: 800;
+        color: $darker-grey;
+    }
+    .more-info__col--content {
+        margin-right: 15px;
+        margin-left: auto;
+        border-radius: 5px;
+        color: $darker-grey;
+        font-weight: bold;
+        @include m(s) {
+            font-size: 10pt;
+            width: 70%;
+            height: 30px;
+        }
+        @include m(m) {
+            font-size: 12pt;
+            width: 74%;
+            height: 36px;
+        }
+        .more-info__col--content__col--left {
+            background-color: $dark-grey;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-right: 2px solid white;
+            height: 100%;
+        }
+        .more-info__col--content__col--right {
+            background-color: $dark-grey;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            height: 100%;
+        }
+        .more-info__col--content__col--para {
+            margin-left: 5px;
+            height: 100%;
+            color: $dark-grey;
+            &.value-selected {
+                color: $darker-grey;
+            }
+        }
+        .more-info__col--content__col--dropdown {
+            height: 100%;
+            width: 40px;
+            img {
+                @include m(s) {
+                    width: 12px;
+                }
+                @include m(m) {
+                    width: 15px;
+                }
+            }
+        }
+    }
+}

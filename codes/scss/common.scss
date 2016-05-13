@@ -70,6 +70,16 @@ ion-content {
 //  Card
 //====================================================
 .card--big {
+    @include m(s) {
+        margin-top: 6px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    @include m(m) {
+        margin-top: 8px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
     background-color: $stable;
     -webkit-box-shadow: 0 1px 1px 1px $grey;
     -moz-box-shadow: 0 1px 1px 1px $grey;
@@ -78,9 +88,6 @@ ion-content {
     width: 96%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 8px;
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 
 //====================================================
@@ -202,7 +209,12 @@ input[type] {
 }
 
 .text--header {
-    font-size: 16pt;
+    @include m(s) {
+        font-size: 13pt;
+    }
+    @include m(m) {
+        font-size: 16pt;
+    }
     font-weight: 800;
     letter-spacing: -1px;
     text-align: center;
@@ -210,11 +222,19 @@ input[type] {
 }
 
 .text--para {
+    line-height: 120%;
+    @include m(s) {
+        font-size: 10pt;
+    }
+    @include m(m) {
+        font-size: 12pt;
+    }
+    // font-size: 12pt;
     color: $dark-grey;
     text-align: center;
-    font-size: 12pt;
     font-weight: bold;
     white-space: pre-line;
+    letter-spacing: -0.5px;
 }
 
 .small {
@@ -225,6 +245,7 @@ input[type] {
     @include m(m) {
         font-size: 10px;
     }
+    text-align: center;
     .small__assertive {
         color: $assertive;
         // font-size: 3vw;
@@ -235,4 +256,9 @@ input[type] {
             font-size: 11px;
         }
     }
+}
+
+.selected {
+    color: white !important;
+    background-color: $assertive !important;
 }

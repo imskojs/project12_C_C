@@ -16,7 +16,7 @@ module modelling {
     occupation: string; // enum
     location: string; // enum
     education: string; // enum
-    maritalStatus: string; // enum
+    maritalStatus: string; // enum 'married', 'single'
     // required 4 to 10
     interests: Array<string>; // array of enums
 

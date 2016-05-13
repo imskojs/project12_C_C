@@ -44,8 +44,8 @@ var paths = {
     // './codes/scss/15_flexboxes.scss',
     // './codes/scss/20_popUpModalAnimations.scss',
     // './codes/scss/30_touched.scss',
+    './codes/scss/common.scss', // common.scss is not purified
     './codes/state/**/*.scss',
-    // './codes/scss/common.scss' // common.scss is not purified
   ],
   js: [
     './codes/js/app.js',
@@ -121,25 +121,25 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
-gulp.task('sassCommon', function(done) {
-  gulp.src([
-    './codes/scss/00_variables.scss',
-    './codes/scss/00_functions.scss',
-    './codes/scss/common.scss'
-  ])
-    .pipe(concat('common.scss'))
-    .pipe(sass({
-      errLogToConsole: true
-    }))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rename({
-      extname: '.min.css'
-    }))
-    .pipe(gulp.dest('./www/css/'))
-    .on('end', done);
-});
+// gulp.task('sassCommon', function(done) {
+//   gulp.src([
+//     './codes/scss/00_variables.scss',
+//     './codes/scss/00_functions.scss',
+//     './codes/scss/common.scss'
+//   ])
+//     .pipe(concat('common.scss'))
+//     .pipe(sass({
+//       errLogToConsole: true
+//     }))
+//     .pipe(minifyCss({
+//       keepSpecialComments: 0
+//     }))
+//     .pipe(rename({
+//       extname: '.min.css'
+//     }))
+//     .pipe(gulp.dest('./www/css/'))
+//     .on('end', done);
+// });
 
 gulp.task('js', function(done) {
   gulp.src(paths.js)
@@ -174,14 +174,14 @@ gulp.task('img', function(done) {
 });
 
 gulp.task('compile', ['img', 'lib']);
-gulp.task('default', ['view', 'sassLib', 'sass', 'sassCommon', 'js']);
+gulp.task('default', ['view', 'sassLib', 'sass', 'js']);
 // gulp release --production
-gulp.task('release', ['lib', 'view', 'sassLib', 'sass', 'sassCommon', 'js']);
+gulp.task('release', ['lib', 'view', 'sassLib', 'sass', 'js']);
 
 gulp.task('watch', function() {
   gulp.watch(paths.view, ['view']);
   gulp.watch(paths.sassLib, ['sassLib']);
   gulp.watch(paths.sass, ['sass']);
-  gulp.watch(['./codes/scss/00_variables.scss', './codes/scss/00_functions.scss', './codes/scss/common.scss'], ['sassCommon']);
+  // gulp.watch(['./codes/scss/00_variables.scss', './codes/scss/00_functions.scss', './codes/scss/common.scss'], ['sassCommon']);
   gulp.watch(paths.js, ['js']);
 });
