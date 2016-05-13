@@ -42,7 +42,7 @@
         </div>
 
         <div class="more-info__col--content flex"
-            ng-click="vm.AgePopover.show()"
+            ng-click="vm.AgePopover.show($event)"
         >
           <div class="col more-info__col--content__col--para"
             ng-class="{'value-selected': vm.Model.user.age}"
@@ -65,7 +65,7 @@
         </div>
 
         <div class="more-info__col--content flex"
-            ng-click="vm.OccupationPopover.show()"
+            ng-click="vm.OccupationPopover.show($event)"
         >
           <div class="col more-info__col--content__col--para"
             ng-class="{'value-selected': vm.Model.user.occupation}"
@@ -88,7 +88,7 @@
         </div>
 
         <div class="more-info__col--content flex"
-            ng-click="vm.LocationPopover.show()"
+            ng-click="vm.LocationPopover.show($event)"
         >
           <div class="col more-info__col--content__col--para"
             ng-class="{'value-selected': vm.Model.user.location}"
@@ -110,7 +110,7 @@
         </div>
 
         <div class="more-info__col--content flex"
-            ng-click="vm.EducationPopover.show()"
+            ng-click="vm.EducationPopover.show($event)"
         >
           <div class="col more-info__col--content__col--para"
             ng-class="{'value-selected': vm.Model.user.education}"
@@ -151,7 +151,7 @@
     <section class="card--big">
       <p class="small" style="margin-bottom: 2px;">입력하신 추가 정보는 칼라고리 서비스 이용에만 사용됩니다.</p>
       <div class="button--big" style="margin-top: 1px;"
-        ng-click="vm.update()"
+        ng-click="vm.updateUser()"
       >
           저장하기
       </div>

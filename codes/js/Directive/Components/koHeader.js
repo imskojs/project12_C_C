@@ -23,13 +23,7 @@
        </ion-header-bar> 
       `,
 
-      controller: function() {
-        if (this.title) {
-          console.log("'title exists' :::\n", 'title exists');
-        } else {
-          console.log("'title does not exists' :::\n", 'title does not exists');
-        }
-      }
+      controller: function() {}
 
     });
 
