@@ -27,6 +27,18 @@ ion-content {
     }
 }
 
+hr {
+    color: $lighter-grey;
+}
+
+.bar.bar-balanced.bar-footer {
+    background-image: none;
+}
+
+.bar {
+    background-image: none;
+}
+
 //====================================================
 //  Flex
 //====================================================
@@ -64,6 +76,11 @@ ion-content {
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
+}
+
+.bg-img--cover {
+    background-position: center center;
+    background-size: cover;
 }
 
 //====================================================
@@ -153,6 +170,18 @@ ion-content {
         height: 44px;
         font-size: 14pt;
     }
+}
+
+.button--complete {
+    background-color: $white;
+    width: 50%;
+    height: 30px;
+    margin: 0 auto;
+    border-radius: 3px;
+    letter-spacing: -1px;
+    text-align: center;
+    font-weight: bold;
+    color: $balanced;
 }
 
 //====================================================

@@ -1,1 +1,114 @@
-#category-list {}
+#category-list {
+    .category-list__content--long {
+        bottom: 0;
+        padding-bottom: 1px;
+    }
+    .card--big {
+        margin-bottom: 100px;
+    }
+    @for $i from 1 through 9 {
+        #category0#{$i} {
+            height: 32vw;
+            background-image: url(#{'../img/category_0' + $i + '.png'});
+        }
+    }
+    @for $i from 10 through 18 {
+        #category#{$i} {
+            height: 32vw;
+            background-image: url(#{'../img/category_' + $i + '.png'});
+        }
+    }
+    .category-list__container {
+        height: 100%;
+        position: relative;
+    }
+    .category-list__container__checkbox {
+        top: 3%;
+        right: 3%;
+        position: absolute;
+        background-color: pink;
+        @include m(s) {
+            width: 16px;
+            height: 16px;
+        }
+        @include m(m) {
+            width: 22px;
+            height: 22px;
+        }
+        border-radius: 50%;
+    }
+    .category-list__container__text-container {
+        position: absolute;
+        bottom: 2%;
+        right: 2%;
+        .circle {
+            margin-left: auto;
+            border-radius: 50%;
+            @include m(s) {
+                width: 8px;
+                height: 8px;
+            }
+            @include m(m) {
+                width: 10px;
+                height: 10px;
+            }
+        }
+        .para {
+            margin-bottom: 0px;
+            line-height: 100%;
+            color: $light-grey;
+            white-space: pre-line;
+            @include m(s) {
+                letter-spacing: -.5px;
+                margin-left: 3px;
+                font-size: 8pt;
+            }
+            @include m(m) {
+                letter-spacing: -1px;
+                margin-left: 5px;
+                font-size: 10pt;
+            }
+        }
+    }
+    ion-pane.category-list__footer-message {
+        height: 50px;
+        top: auto;
+        bottom: 44px;
+        padding-top: 10px;
+        background-color: rgba(35, 183, 252, 0.95);
+        p {
+            letter-spacing: -1px;
+            margin-bottom: 0;
+            line-height: 110%;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            @include m(s) {
+                font-size: 9pt;
+            }
+            @include m(m) {
+                font-size: 11pt;
+            }
+        }
+        .count {
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            top: 7px;
+            right: 2%;
+            letter-spacing: -1px;
+            @include m(s) {
+                font-size: 8pt;
+            }
+            @include m(m) {
+                font-size: 10pt;
+            }
+            > span {
+                color: $assertive;
+            }
+        }
+    }
+    .footer {
+        background-color: rgba(35, 183, 252, 0.95);
+    }
+}

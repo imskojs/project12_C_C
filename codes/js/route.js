@@ -36,6 +36,11 @@
         templateUrl: 'state/MoreInfo/MoreInfo.html',
         controller: 'MoreInfoController as vm'
       })
+      .state('CategoryList', {
+        url: '/CategoryList',
+        templateUrl: 'state/CategoryList/CategoryList.html',
+        controller: 'CategoryListController as vm'
+      })
       .state('SurveyList', {
         url: '/SurveyList',
         templateUrl: 'state/SurveyList/SurveyList.html',

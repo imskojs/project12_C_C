@@ -1,0 +1,55 @@
+<ion-view id="category-list">
+  <ion-content class="category-list__content--long">
+    <section class="card--big">
+      <h1 class="text--header">
+        관심 있는 카테고리를 모두 골라주세요
+      </h1>
+      <p class="text--para"> 관심있는 카테고리를 선택하시면
+      맞춤형 설문 & 결과를 제공합니다.
+      </p>
+      <hr>
+      <div class="row row-no-padding row-wrap row--big">
+        <div id="{{category.name}}" class="col-33 bg-img--cover"
+          ng-repeat="category in vm.Model.categories"
+        >
+          <div class="category-list__container"
+            ng-click="vm.toggleCategory(category.name)"
+          >
+              
+            <img class="category-list__container__checkbox"
+              ng-src="{{vm.isSelectedCategory(category.name) ? category.icon : 'img/category_unselect.png'}}"
+            >
+            <div class="category-list__container__text-container">
+              <div class="row row-no-padding flex-v">
+                <div class="circle"
+                  ng-style="{'background-color': category.color}"
+                >
+                  
+                </div>
+                <p class="para"> {{category.text}} </p>
+              </div>
+            </div>
+              
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </ion-content>
+
+  <ion-pane class="category-list__footer-message">
+    <p>최소 4개 이상 10개까지 관심사 설정이 가능하며</p>
+    <p>언제든지 변경이 가능합니다.</p>
+    <div class="count">
+      <span>{{vm.Model.selectedCategories.length}}</span> / 10
+    </div>
+
+  </ion-pane>
+
+  <ion-footer-bar class="footer zero">
+    <div class="button--complete flex">
+      선택완료
+    </div>
+  </ion-footer-bar>
+
+</ion-view>
