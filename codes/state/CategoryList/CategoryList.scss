@@ -3,7 +3,8 @@
         bottom: 0;
         padding-bottom: 1px;
     }
-    .card--big {
+    .category-list__card--big {
+        @extend .card--big;
         margin-bottom: 100px;
     }
     @for $i from 1 through 9 {

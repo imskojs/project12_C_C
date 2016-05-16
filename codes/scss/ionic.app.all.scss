@@ -504,7 +504,8 @@ input[type] {
         bottom: 0;
         padding-bottom: 1px;
     }
-    .card--big {
+    .category-list__card--big {
+        @extend .card--big;
         margin-bottom: 100px;
     }
     @for $i from 1 through 9 {
@@ -806,6 +807,58 @@ input[type] {
     }
 }
 
+#survey-list {
+    .survey-list__content--long {
+        top: 0;
+        bottom: 0;
+    }
+    .survey-list__buttons {
+        .survey-list__button {
+            border-radius: 3px;
+            @include m(s) {
+                font-size: 10pt;
+                height: 34px;
+            }
+            @include m(m) {
+                font-size: 12pt;
+                height: 40px;
+            }
+            text-align: center;
+            border: 1px solid $light-grey;
+            letter-spacing: -1px;
+            color: $dark-grey;
+            font-weight: bold;
+            margin-left: 2%;
+            margin-right: 2%;
+            @extend .flex;
+        }
+        .survey-list__button--selected {
+            background-color: $assertive;
+            color: $white;
+        }
+    }
+    .survey-list__lists {
+        padding-top: 10px;
+        column-count: 2;
+        padding-left: 1%;
+        padding-right: 1%;
+        // column-gap: 1%;
+        .survey-list__lists__survey {
+            display: inline-block;
+            width: 100%;
+            // margin-top: 8px;
+            margin-left: 1%;
+            margin-right: 2%;
+            // width: 47%;
+            background-color: $white;
+            // background-color: $stable;
+            // -webkit-box-shadow: 0 1px 1px 1px $grey;
+            // -moz-box-shadow: 0 1px 1px 1px $grey;
+            // box-shadow: 0px .3px .3px 0px $grey;
+            // border-radius: 2px;
+        }
+    }
+}
 
 #walkthrough {
     //====================================================

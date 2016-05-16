@@ -1,4 +1,69 @@
 <ion-view id="survey-list">
-  <ion-content>
+  <ion-content class="survey-list__content--long">
+    <section class="card--big">
+      <h1 class="text--header">
+        {{vm.Model.dailyIssue.title}}
+      </h1>
+      <p class="text--para">{{vm.Model.dailyIssue.content}}</p>
+      <hr>
+      <div class="row row-no-padding survey-list__buttons">
+        <div class="col survey-list__button"
+          ng-class="{'survey-list__button--selected': true}"
+        >
+          잘했다고 생각한다
+        </div>
+        <div class="col survey-list__button"
+          ng-class="{'survey-list__button--selected': false}"
+        >
+          있을 수 없는 일이다
+        </div>
+      </div>
+
+    </section>
+
+    <section class="survey-list__lists">
+      <div class="survey-list__lists__survey">
+        textasdfas
+        dfasdfa
+        sdfasdfa
+        sdfasdfasdf
+        asdfasdfasdf
+        asdfasdfasdf
+        asdf
+      </div>
+      <div class="survey-list__lists__survey">
+        123123
+        12312312
+        31231231
+        2312312312
+        31231231
+        23123123
+      </div>
+      <div class="survey-list__lists__survey">
+        text
+      </div>
+      <div class="survey-list__lists__survey">
+        text
+      </div>
+      <div class="survey-list__lists__survey">
+        text
+      </div>
+      <div class="survey-list__lists__survey">
+        text
+      </div>
+      <div class="survey-list__lists__survey">
+        text
+      </div>
+    </section>
+
   </ion-content>
+
+
+
+
+  <ion-footer-bar class="bar-balanced bar-footer zero">
+    <div class="button--complete flex">
+      선택완료
+    </div>
+</ion-footer-bar>
 </ion-view>
